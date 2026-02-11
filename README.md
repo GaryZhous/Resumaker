@@ -1,6 +1,7 @@
 # Resumaker
 
 Inspired by [Resumake](https://latexresu.me/), this is a resume builder for my fellow job seekers in STEM. It is based on my own resume which got me interviews from big tech companies and unicorns like Google, Stripe, Block, Expedia, and Atlassian, and even quant companies like Squarepoint and DRW.
+
 <img width="1635" height="1110" alt="image" src="https://github.com/user-attachments/assets/1b30fd97-5413-4408-97ae-c87d90951542" />
 ## Features
 - Form-based editor for personal info, education, work, skills, projects, and awards
