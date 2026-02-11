@@ -28,7 +28,11 @@ python main.py
 ## How to use
 <img width="1626" height="1107" alt="image" src="https://github.com/user-attachments/assets/dc60528e-5ab2-4843-a696-ea5d595859aa" />
 
-- Simply fill the entries and add/remove sections based on your experience
-- Export the file in either json or LaTex (recommended)
-- Open the LaTex file on [Overleaf](https://www.overleaf.com) and you can download your newly built resume as a PDF!
-- If you want to change the template, you can simply load your own template in the form of json
+1. Launch the app and fill in your details.
+2. Add or remove sections as needed (Education, Work, Skills, Projects, Awards).
+3. Export to LaTeX (.tex) for best results.
+4. Upload the .tex file to [Overleaf](https://www.overleaf.com) and compile to download your PDF.
+
+Notes:
+- JSON is the app's data format. Use it to save/load your resume content.
+- To use a different layout, edit the LaTeX template at `templates/resume.tex.j2`.
