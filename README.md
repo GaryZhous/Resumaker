@@ -1,6 +1,6 @@
 # Resumaker
 
-A simple, template-based resume builder with a desktop UI (PySide6). Edit your resume data in the app and export to LaTeX or JSON.
+Inspired by [Resumake](https://latexresu.me/), this is a resume builder for my fellow job seekers in STEM. It is based on my own resume which got me interviews from big tech companies and unicorns like Google, Stripe, Block, Expedia, and Atlassian, and even quant companies like Squarepoint and DRW.
 
 ## Features
 - Form-based editor for personal info, education, work, skills, projects, and awards
