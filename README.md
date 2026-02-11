@@ -31,3 +31,4 @@ python main.py
 - Simply fill the entries and add/remove sections based on your experience
 - Export the file in either json or LaTex (recommended)
 - Open the LaTex file on [Overleaf](https://www.overleaf.com) and you can download your newly built resume as a PDF!
+- If you want to change the template, you can simply load your own template in the form of json
