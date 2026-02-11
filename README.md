@@ -25,14 +25,7 @@ pip install -r requirements.txt
 ```bash
 python main.py
 ```
-
-## Notes
-- PDF export is currently disabled in the UI.
-- The LaTeX template lives at `templates/resume.tex.j2`.
-
-## Project Structure
-- `main.py`: UI and app logic
-- `models.py`: Pydantic models for resume data
-- `latex.py`: Jinja2 LaTeX rendering
-- `pdf_export.py`: PDF rendering helpers (unused by default)
-- `templates/`: LaTeX templates
+## How to use
+- Simply fill the entries and add/remove sections based on your experience
+- Export the file in either json or LaTex (recommended)
+- Open the LaTex file on [Overleaf](https://www.overleaf.com) and you can download your newly built resume as a PDF!
