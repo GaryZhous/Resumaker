@@ -1,0 +1,95 @@
+\documentclass[a4paper]{article}
+\usepackage{fullpage}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{textcomp}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\textheight=11in
+\pagestyle{empty}
+\raggedright
+\usepackage[left=0.8in,right=0.8in,bottom=0.7in,top=0.8in]{geometry}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue]{hyperref}
+
+\def\bull{\vrule height 0.8ex width .7ex depth -.1ex }
+
+\newcommand{\lineunder} {
+    \vspace*{-8pt} \\
+    \hspace*{-18pt} \hrulefill \hspace*{-0.5cm} \\
+}
+
+\newcommand{\header} [1] {
+    {\hspace*{-18pt}\vspace*{6pt} \textsc{#1}}
+    \vspace*{-6pt} \lineunder
+}
+
+\begin{document}
+\vspace*{-40pt}
+
+%==== Profile ====%
+\vspace*{-10pt}
+\begin{center}
+	{\Huge \scshape << personal.full_name | replace("&","\\&") >>}\\
+	<< personal.phone >> $\cdot$
+	\href{mailto:<< personal.email >>}{<< personal.email >>} $\cdot$
+	\href{<< personal.linkedin >>}{LinkedIn} $\cdot$
+	\href{<< personal.portfolio >>}{Portfolio} $\cdot$
+	\href{<< personal.github >>}{GitHub}\\
+\end{center}
+
+%==== Education ====%
+\header{<< section_education >>}
+<% for e in education %>
+\textbf{<< e.school_name | replace("&","\\&") >>} \hfill << e.school_location | replace("&","\\&") >> \\
+<< e.degree | replace("&","\\&") >> in << e.major | replace("&","\\&") >> \hfill << e.start_date >> - << e.end_date >>\\
+<% if e.gpa %>GPA: << e.gpa >>\\<% endif %>
+\vspace{2mm}
+<% endfor %>
+
+%==== Skills ====%
+\header{<< section_skills >>}
+\noindent
+\begin{tabular}{@{} p{4cm} p{14cm} @{}}
+<% for s in skills %>
+	<< s.name | replace("&","\\&") >>: & <% for d in s.details %><< d | replace("&","\\&") >><% if not loop.last %>, <% endif %><% endfor %> \\
+<% endfor %>
+\end{tabular}
+\vspace{2mm}
+
+%==== Experience ====%
+\header{<< section_experience >>}
+\vspace{1mm}
+<% for x in experience %>
+\textbf{<< x.company_name | replace("&","\\&") >>} \hfill << x.company_location | replace("&","\\&") >>\\
+\textit{<< x.job_title | replace("&","\\&") >>} \hfill << x.start_date >> - << x.end_date >>\\
+\vspace{-1mm}
+\begin{itemize} \itemsep 1pt
+<% for r in x.responsibilities %>
+	\item << r | replace("%","\\%") | replace("&","\\&") >>
+<% endfor %>
+\end{itemize}
+<% endfor %>
+
+%==== Projects ====%
+\header{<< section_projects >>}
+<% for p in projects %>
+{\textbf{<< p.project_name | replace("&","\\&") >>}} <% if p.link %>{[\href{<< p.link >>}{Link}]}<% endif %> {\sl \textbf{-} << p.genre | replace("&","\\&") >> }\hfill << p.start_date >> - << p.end_date >>\\
+\vspace{-1mm}
+\begin{itemize} \itemsep 1pt
+<% for b in p.description_bullets %>
+    \item << b | replace("%","\\%") | replace("&","\\&") >>
+<% endfor %>
+\end{itemize}
+<% endfor %>
+
+%==== Awards ====%
+\header{<< section_awards >>}
+<% for a in awards %>
+\textbf{<< loop.index >>. << a.award_name | replace("&","\\&") >>:} << a.summary | replace("&","\\&") >>\\
+<% if a.awarder and a.awarder != "N/A" %><< a.awarder | replace("&","\\&") >><% endif %>
+<% if a.award_date and a.award_date != "N/A" %> \hfill << a.award_date >><% endif %>
+\\
+\vspace*{2mm}
+<% endfor %>
+
+\end{document}
