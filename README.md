@@ -26,6 +26,8 @@ pip install -r requirements.txt
 python main.py
 ```
 ## How to use
+<img width="1626" height="1107" alt="image" src="https://github.com/user-attachments/assets/dc60528e-5ab2-4843-a696-ea5d595859aa" />
+
 - Simply fill the entries and add/remove sections based on your experience
 - Export the file in either json or LaTex (recommended)
 - Open the LaTex file on [Overleaf](https://www.overleaf.com) and you can download your newly built resume as a PDF!
