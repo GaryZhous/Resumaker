@@ -36,4 +36,3 @@ python main.py
 Notes:
 - JSON is the app's data format. Use it to save/load your resume content.
 - To use a different layout, edit the LaTeX template at `templates/resume.tex.j2`.
-- You can also find my template resume at `template.pdf`.
